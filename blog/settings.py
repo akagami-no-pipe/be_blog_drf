@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
-    'drf_spectacular',
+    'drf_yasg',
     'users',
+    'categories',
 ]
 
 MIDDLEWARE = [
@@ -131,16 +132,7 @@ AUTH_USER_MODEL = 'users.User'
 
 #Configuración rest framework
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
-}
-
-#Configuración para drf spectacular (documentación)
-SPECTACULAR_SETTINGS = {
-    'TITLE': 'Blog API',
-    'DESCRIPTION': 'APIs del blog',
-    'VERSION': '1.0.0',
-    'SERVE_INCLUDE_SCHEMA': False,
 }
