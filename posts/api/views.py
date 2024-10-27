@@ -9,5 +9,5 @@ class PostApiViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated, PostPermissions]
     serializer_class = PostSerializer
     queryset = Post.objects.filter(published=True)
-    filterset_fields = ['title', 'category']
+    filterset_fields = ['title', 'category', 'category__slug']
     lookup_field = 'slug'
